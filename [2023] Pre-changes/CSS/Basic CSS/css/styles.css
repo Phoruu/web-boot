@@ -1,0 +1,34 @@
+
+
+body{
+    background-color: #F3DEBA;
+}
+
+hr{
+    /*background-color: none;*/
+    border-style:dotted none none ;
+    border-width:10px;
+    border-color:maroon;
+    height:0px;
+    width:15%;
+}
+
+h1{
+    color:#263A29;
+    font-family: "Century Gothic";
+}
+
+h2{
+    color:#617143;
+    font-family: "Century Gothic";
+}
+
+
+h3{
+    color:#41644A;
+    font-family: "Century Gothic";
+}
+
+/*img{
+    height:20px;
+}*/

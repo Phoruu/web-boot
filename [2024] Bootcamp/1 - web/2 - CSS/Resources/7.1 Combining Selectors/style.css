@@ -1,0 +1,33 @@
+
+/*  DONE    */
+
+
+/* Write your code here: */
+
+h1, h2{
+    color:blueviolet
+}
+
+/* not .box>.done       - actually correct  */ 
+/* div > p is wront */
+
+/* .box > p     alternative according to A.Y.*/
+.box>.done{
+    color:firebrick;
+}
+
+/* .box li      alternative*/
+/* .list li      alternative*/
+.list li{
+    color:blue
+}
+
+/* li.done      alternative */
+ul.list li.done{
+    color:seagreen;
+}
+
+/*  ul > p.done   alternative    */
+body ul p.done{
+    font-size:0.5rem
+}

@@ -1,0 +1,1212 @@
+/*
+
+
+        ************************************
+                        CSS
+        ************************************
+
+        Important note/s!   (!)
+        - you can apply 2 or more class if you add space
+            e.g. <h1 class="a-class another-class>  ... </h1>
+        - create a circle in CSS by defining border-radius, along with width and height
+                e.g. {
+                    width: 200px; height: 200px;
+                    border-radius: 20%;
+                }
+        - Flexbox Guide
+                https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+        - vh = reference to the viewport
+        - <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        - .min (in URL) erases the space character to load faster    
+-->
+
+<!--  
+       
+        // ====================================
+        //             Section 5 
+        // ====================================
+        //        Introduction to CSS
+        // ====================================
+
+        1.) CSS Introductions
+
+            CSS - Cascading Style Sheet
+
+            Style Sheet
+            - language that allows to specify how things
+                should look in the website
+            - e.g. CSS, Sass, Less, ...
+
+
+            HTML 3.2 Consortium
+            - introduced the styling (color, align, size, face)
+       
+            Father of CSS
+            - Håkon Wium Lie
+            - W3C Recommendation 17 Dec 1996, revised 11 April 2008
+                > attach "styles" to HTML document
+
+
+        2.) How to add CSS?
+
+            Types of CSS
+            2.1.) Inline
+                - <tag style="css" />
+                - specific sections/one line
+                - single element
+                - e.g. <html style="background: blue">
+
+            2.2.) Internal
+                - same HTML document
+                - <style> css </style>
+                - single webpage
+                - SELECTOR
+                        html{
+                            background: red;
+                        }
+
+
+            2.3.) External
+                - <link href="style.css" rel="stylesheet" />
+                - multipage application of CSS
+                - separate file
+                - inside styles.css
+                        html{
+                            background: green;
+                        }
+
+
+        3.) CSS Selectors
+
+                Selectors
+                - e.g. h1 {color:blue}
+
+                    3.1.) Element Selector
+                        - select a particular HTML tag
+                        - e.g. h1{}, a{}, h2{]
+
+                    3.2.) Class Selector
+                        - selects a class, adds an attribute to an element
+                        - e.g. .red-text {color:red}
+                            <h2 class="red-text"> Red </h2>
+                            <p  class="red-text"> Red </p>
+
+                    3.3.) ID Selector
+                        - selects a particular ID attribute
+                        - e.g. #main {color:red]
+                            <h2 id="main"> Red </h2>
+
+                        Class vs ID Selector
+                        - Class can be used in many elements
+                        - ID can only be used in ONE element (unique)
+
+                    3.4.) Attribute Selector
+                        - uses an element with particular attribute
+                        - e.g. p[draggable]{color:red}
+                            <p draggable="true">Drag me </p>
+                        - alternatively, you can specify what value of the attribute
+                            p[draggable="false"] {color:red}
+                            <p draggable="false"> Don't drag me </p>
+
+                    3.5.) Universal Selector
+                        - selects all elements
+                        - e.g. *{color:red}
+
+
+                CSS Specificity
+                - to be discussed in Chapter 7 - Advanced CSS
+                - seemingly like hierarchy (precedence rule e.g. PEMDAS)
+                    
+
+
+
+        // ====================================
+        //             Section 6
+        // ====================================
+        //          CSS Properties
+        // ====================================
+
+        4.) CSS Colors
+
+                color            : changes textcolor
+                background-color : changes the background color
+
+                named color     - CornflowerBlue, Vermillion, RebeccaPurple, DarkCyan, etc.
+                hex code        - #503891, #F99417, #3E8E2E2, #F5F5F5
+                rgb             - rgb(93, 56, 145), rgb (249, 148, 23)
+
+        5.) Font Properties
+
+                color           : changes text color
+                font-weight     : bold, italic, etc.
+                font-size       : changes the size of the font
+                font-family     : changes the font used (e.g. Arial, Verdana)
+                text-align      : where to put
+
+                FONT SIZE (html{font-size: }   )
+
+                    named size      - xx-large
+                    1 px (Pixel)    = 1/96th inch OR 0.26 mm
+                    1 pt (Point)    = 1/72nd inch OR 0.35 mm  (used in Word, 12 pt default)
+*                   1 em (Relative) = 100% of parent    (width of letter m - longest letter)
+                    1 rem (HTML)    = 100% of root
+
+                    1em (100% of parent)    VS      1 rem (100% of root)
+                    EM
+                        - moving relative to parent size
+                        Example for em
+                            <footer>    [20px]
+                                <h2> Hello </h2>    [2em x 20px = 40px]
+                            </footer>
+
+                    REM
+                        - uses style from <html></html>
+                        - more consistent
+                        Example for rem
+                        <html>  [90px]
+                            <footer>    [40px]
+                                <h2> Hello </h2>    [2rem x 90px = 180px]
+                            </footer>
+
+
+                FONT WEIGHT (html{font-weight: }   )
+
+                    normal, bold        - keywords
+                    lighter, bolder     - relative to parent
+                    number              - 100-900
+
+
+                FONT FAMILY (html{font-family: }   )
+                    
+                    e.g. h1 {font-family: Helvetica, sans-serif}    
+                         h2 {font-family: "Times New Roman", serif}     <--- Typeface multiple words
+
+
+                    Typeface    - not all computer has the font (e.g. Helvetica)
+                        Sans-Serif  - all font edges are 90 degrees (e.g. Helvetica)
+                        Serif       - edges have feet/decoration (e.g. Times New Roman)
+
+                    How to import
+                    1.) Look for font in Google Fonts
+                    2.) Import the necessary links (most likely 3 links)
+*                   3.) Use the font
+
+
+                TEXT ALIGN (html{text-align: }   )
+                    
+                    start, end
+                    center, justify
+                    
+
+        6.) CSS Inspection (using Chrome Developer Tools)
+            
+            - Google provides developers with suite of tools
+            - Right click to inspect
+
+        7.) The CSS Box Model - Margin, Padding, Border
+
+                width and height
+                    1px     - pixel
+                    100%    - relative to the screen
+
+                border (e.g. border: 10px solid black;)  // 3 val, thickness, style, color) 
+                
+                    border goes outward, will not affect width and height
+
+                    border-top   - customize border of the top
+                    border-width - 4 val, top, right, bottom, left (clockwise)
+            
+                padding
+
+                    - in between element and border (e.g. between <p> and border>
+                    - push out border by n-pixels/unit
+
+                margin
+
+                    - beyond the border
+                    - extends beyond the border
+
+                
+                note: 
+                  you may use (if cannot border: 20px 10px solid black;
+                    border: solid black;
+                    border-width: 20px 10px;
+
+
+                ILLUSTRATION
+
+x              -----------------------------------------
+x                               margin
+x               xxxxxxxxxxxxxxx border xxxxxxxxxxxxxxxxx                              
+x                               padding
+x               ========================================
+x                               ELEMENT
+                      
+
+                CONTENT DIVISION ELEMENT
+                    - invisible unless styled
+                    - acts as a container to group a section together
+                    - <div></div>
+
+
+        // ====================================
+!       //             Section 7
+        // ====================================
+        //         Intermediate CSS
+        // ====================================
+
+
+        8.) The Cascade - Specificity and Inheritance
+
+            Cascade
+            - priority: inline <----- external
+
+
+*           Position
+            - the lower it is declared, the higher its priority (see example in additional notes)
+
+*           Specificity 
+            - based on the most specific (e.g. ID is only used one)
+            - ID <---- attribute <----- class <------ element
+
+*           Type
+            - inline <--- internal <--- external
+
+*           Importance
+            - explicitly put important
+            - e.g. 
+                    color: red;
+                    color: green !important;    <--- applied
+
+
+        
+        9.) Combining CSS Selectors
+
+            - Descendents
+            - e.g.  .inner-box  p   {color:white}
+
+            Types of Combination Rule
+
+            9.1.) Group (uses comma ,)
+                - selector, selector {color:blue}
+                - e.g.  h1, h2   {color:blueviolet}
+
+            9.2.) Child (uses >)
+                - parent selector > child selector {color:blue}
+                ! only one generation deep (direct child, no grandchild)
+                - e.g.  .box>.done  {color:blueviolet}
+
+            9.3.) Descendent (uses 'whitespace')
+                - selector selector {color:blue}
+                - ancestor descendent
+                - e.g.  .box li     {color:blueviolet}
+
+            9.4.) Chaining (connect two selectors)
+                - selectorselector {color:blue}
+                - apply where ALL selectors are true
+                - really really specific (chaining all condition)
+                - START OFF with element before classes and IDs
+                - e.g.  <h1 id="title" class="big heading"> ... </h1>
+                        h1#title.big.heading    {color:blueviolet}
+
+            9.5.) Combining Combiners
+                - selector selectorselector {color:blue}
+                - combine other 4 combiners with each other
+
+
+
+        10.) CSS Position
+            - Relative, Absolute, Fixed, Static
+
+            {position:relative} OR {position:absolute} OR {position:fixed} OR {position:static}
+
+            10.1) Static Positioning
+            - Default HTML setting
+            - flows the entities based on code
+
+            10.2.) Relative Position
+            - position relative to default position
+            - adjusts element in accordance to the anchor (where it should be)
+            - e.g. position: relative; left:50px; top:50px;
+                            WILL move entity 50px to the left and right
+                            where it should be (see Discord)
+
+            10.3.) Absolute Positioning
+            - position relative to nearest positioned ancestor OR
+                                   top left corner of webpage
+            - uses ancestor as anchor/reference 
+            - NEEDS ancester with position:relative before using absolute
+                > Z-Index
+                    - determines which elements is in front
+                    - Canva/Microsoft Office - move to the top
+                    - {z-index: -1}
+
+            10.4.) Fixed Positioning
+            - position RELATIVE TO TOP LEFT CORNER of browser window
+            - sticky note
+
+*           IN ADDITION TO BOX MODEL, position goes beyond the margin (outermost, uses the window)
+
+!           Additional lesson: Create a circle in CSS
+
+
+        // ====================================
+        //             Section 8
+        // ====================================
+        //           Advanced CSS
+        // ====================================
+
+
+        11.) CSS Display
+
+            <p> Hello <span> Awesome </span> World </p>
+             span    <---- different value of display
+
+
+
+            11.1.) Display: Block
+            - entire full width
+
+            11.2.) Display: Inline
+            - displays content in the same line
+            - FITS to the width and height of element
+
+            11.3.) Display: Inline-block
+            - set height and width AND same elements in the same line
+            - CAN change width and height CSS properties
+
+            11.4.) Display: none
+            - make content disappear
+
+        
+        12.) CSS Float
+
+            - float: left;
+            - Wrapping text using float around an element
+            - from understanding, it puts "floats" an element and the other elements
+                    (e.g. texts) around the 1st element will float around
+
+            FOOTER
+            - can be used as a way to de-float another element (not wrap around a float)
+            - e.g.      footer {clear: left}
+            - if footer is against left and right, footer: both
+
+            
+            > MODERN Web Design uses float only for wrapping text around, other tools
+                    such as Flexbox, Grid, and Bootstrap
+
+        
+
+        13.) Responsive Websites
+
+            - make websites responds to set conditions
+
+
+            13.1.) Media Queries
+                - invokes CSS to change property @given condition
+                - e.g. 
+                    @media (max-width: 600px) { CSS for screen <= 600px wide }
+
+            13.2.) CSS Grid       
+                - set   ->  display: grid
+                - uses different divs
+                - uses FRACTIONS (1fr 2fr)
+                - uses different Grid properties
+                - refer Discord for illustration
+
+            13.3.) CSS Flexbox
+                - set   ->  display: flex
+                - uses RATIO!!! (based on the total number of flexes)
+                - uses different divs
+                - usually have double classes for one div (class ="first card")
+
+            13.4.) External Frameworks (e.g. Bootstrap)
+                - not built on CSS, hence a "FRAMEWORK"
+                - predefined, written by someone
+                - built on top of Flexbox
+
+
+
+        14.) Media Queries
+            - Adding breakpoints to define responsive layouts (max-width: 600px)
+            - breakpoints (max-width, min-width)
+            - can mix break points using and keyword        (breakpoint) and (breakpoint)
+
+            Device 
+            - using screen/print keyword
+            - e.g.  @media screen (orientation: landscape)
+
+
+        // ====================================
+        //             Section 9
+        // ====================================
+!       //              Flexbox
+        // ====================================
+
+
+        15.) Display: Flex
+
+            History of Layouting Websites
+            - from Newspaper
+            - HTML Tables ---> CSS Display ---> CSS Float
+            - Float is only used to wrap text around image (Internal)
+            - Flexbox is better for overall page structure (External)
+
+            Display Values:
+            div - block
+            span - inline
+            
+            Flexbox - ignores the display values 
+                    - puts in one single line
+            
+            Important Syntaxes:
+                display: inline-flex;
+                gap: 10px;
+
+        
+        
+        16.) Flex Direction
+
+            main axis - direction of flex
+
+            default = row
+            --------main-axis-------------------->
+            
+            flex-direction: column
+            cross axis
+            
+            flex-basis: 100px;      <--- height
+
+
+        17.) Flex Layout
+            > align, justify, and wrap
+
+            - order: 0;                         (children)        
+                // any number      
+
+            - flex-wrap: nowrap;                (parent)
+                // nowrap, wrap, wrap-reverse 
+
+            - justify-content: flex-start       (parent)
+                // flex-start, flex-end, center, space-around, space-between, space-evenly
+
+            - align-items: flex-start           (parent)
+!               > needs heigh: 70vh (viewport height)
+                > if flex-wrap = wrap, align item will not work
+                // flex-start, flex-end, center, baseline, stretch
+
+            - align-content:center;
+                > needs flex-wrap = wrap
+
+
+            - align-self: flex-start
+        
+        
+        18.) Flex Sizing
+
+x           content width   <-----  width   <-----  flex-basis  <-----  mid-width/max-width
+x                           ===== more important ===========> 
+
+
+            - ignores sizings upon higher priority
+                e.g. if width: 100px;   flex-basis: 200px ====> width will be ignored
+
+            - max-width will respect to the flex-basis UNLESS
+                > the max-width happens to be smaller than flex-basis
+
+            
+            - flex: basis 
+                    initial strating value
+
+            - flex: grow
+
+            - flex: shrink
+
+            FLEXBOX Default Grow/Shrink:
+            - flex-grow: 0;
+            - flex-shrink: 1;
+
+            - flex: 1 1 0;
+                // grow, shrink, basis
+                // alternatively, flex: 1;
+
+        // ====================================
+        //             Section 10
+        // ====================================
+        //                Grid
+        // ====================================
+
+        Flexbox vs Grid
+
+        Flexbox
+        - a way to align content along a 1D line
+        Grid
+        - a way to align content along a 2D line
+
+        Flexbox AND Grid
+        - combine elements (Flexbox used within Grid)
+        - Alternatively, you can put Grid INSIDE a Flexbox!
+
+
+        19.) Display: Grid
+
+            grid-templete-columns: 1fr 2fr;
+            grid-templete-rows: 1fr 1fr;
+            gap: 10px;
+
+
+
+        20.) Grid Sizing
+
+            - Fixed Size
+            - Auto Size
+            - Fractional Size
+            - MinMax Size
+            - Repeat
+
+            > if declared is low (HTML) vs higher grid (CSS), remaining grids will be empty
+                e.g. <div class="grid-item> 1 </div>
+                     <div class="grid-item> 2 </div>
+                     <div class="grid-item> 3 </div>
+
+                CSS grid-template-row: 200px 200px;
+                    grid-template-columns: 200px 200px;
+
+            > if declared is high (HTML) vs lower grid (CSS), excess will auto fit.
+                e.g. <div class="grid-item> 1 </div>
+                     <div class="grid-item> 2 </div>
+                     <div class="grid-item> 3 </div>
+                     <div class="grid-item> 4 </div>
+                     <div class="grid-item> 5 </div>
+
+                CSS grid-template-row: 200px 200px;
+                    grid-template-columns: 200px 200px;
+
+                > to fix, you use
+                    grid-auto-rows: 300px;
+                    grid-auto-columns: 300px;
+
+
+            NON-RESPONSIVE
+                display: grid;
+                grid-templete-columns: 100px 200px;
+                grid-templete-rows: 400px 800px;
+
+                > along with rem
+
+                grid-template: 100px 200px / 400px 800px;
+
+
+            RESPONSIVE
+                display:grid;
+                grid-template-rows: 100px auto;
+                grid-template-columns: 200px auto;
+
+                > AUTO autofits to the element
+
+
+            20.1.) Fixed Size
+
+                display: grid;
+                grid-templete-columns: 200px 400px;
+                grid-templete-rows: 200px 100px;
+
+            20.2.) Auto Size
+
+                display: grid;
+                grid-templete-columns: 200px auto;
+                grid-templete-rows: 200px auto;
+
+            20.3.) Fractional Size
+
+                display: grid;
+                grid-templete-columns: 2fr 4fr;
+                grid-templete-rows: 1fr 1fr);
+
+            20.4.) MinMax Size
+                
+                display: grid;
+                grid-templete-columns: 200px 400px;
+                grid-templete-rows: 200px minmax(400px, 800px);
+
+            20.5.) Repeat
+
+                display: grid;
+                grid-templete-columns: repeat(2, 200px);
+                grid-templete-rows: repeat(2, 100px);
+
+
+
+        21.) Grid Item Placement
+
+            - Grid Lines (gap/margin)
+            - Grid Tracks (column/row)
+            - Grid Cells (inside)
+            - Grid Container
+            - Grid Items
+
+
+            How to align Items inside a Grid Cell? (Using Flexbox)
+            - Each Grid Cell can be declared with
+                display:flex; to easily manipulate the placement of the items
+
+            How to span columns and row?
+            - grid-column: span 2;
+
+                > inside are
+                    - grid-column-start: span 2;
+                    - grid-column-end  : auto  ; 
+
+                CAN BE CHANGED (SPECIFIED) TO
+                    - grid-column-start :  2;
+                    - grid-column-end   : -1;   // negative (-) opposite grid-line
+
+            - order: 0; 
+
+            > You may manually set the area around the grid by
+                grid-column-start: 1;
+                grid-column-end: 3; 
+                grid-row-start: 2;
+                grid-row-end: 3;
+                        OR
+                grid-area: 2 / 1 / 3 / 3;
+                        row start / column start / row end / column end
+
+        // ====================================
+        //             Section 11
+        // ====================================
+        //              Bootstrap
+        // ====================================
+
+*       Predefined-Breakpoints (#23)
+            - extra small       N/A         [narrow screens]    
+            - small             sm          [mobile]
+            - medium            md          [ipad]
+            - large             lg          [laptop]
+            - extra large       xl          [desktop]
+            - extra extra large xxl         [television]
+        
+        22.) What is Bootstrap?
+
+            Bootstrap
+            - CSS Framework from 2010 (Twitter)
+                > pre-built components
+            - Mobile First
+
+            Other CSS Framework
+            - Bootstrap
+            - Foundation
+            - NUI
+            - Taiwind CSS
+            - Animate CSS
+
+            PROS of External CSS Framework
+            - East, Fast to use, pre-built components
+            - Consistent Styling
+            - Browser compatibility
+
+            CONS of External CSS Framework
+            - Adding of styling INSIDE HTML (Class Bloat)
+            - Customization
+
+            WHEN to and not to use
+            - Mobile first, slick design
+            - Simple design
+
+            x You want to customize
+
+
+            HOW TO USE BOOTSTRAP
+            - Include via CDN (Content Delivery Network)
+
+!           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+
+        23.) Bootstrap Layout
+
+            12 Column System
+            - div container
+                - div row
+                    - items
+
+            Multiple columns --> autofit
+
+
+            BOOTSRAP Containers
+            - .container-sm
+                   ...
+            - .container-fluid
+
+            Sized Columns
+            - class="col-2"
+
+*           Predefined breakpoints (refer up)
+
+            Multiple Breakpoints
+            - e.g. col-sm-12    col-md-8    col-lg-4
+            
+
+        24.) Bootstrap Components
+
+            24.1.) Buttons
+                e.g. <button type="button" class="btn btn-primary"> Primary </button>
+
+            24.2.) Card
+                e.g. <div class="card" style="width: 18rem;">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+
+            24.3.) Navs (Navigation Bar)
+                
+
+            A LOT MORE ON BOOTSTRAP
+
+            Utility Classes
+            - Spacing
+                > padding and margin
+                    - {property}{sides]-{size}
+                    - mt-5      (margin top - 5 units)
+
+
+            Dark Mode
+            <html lang="em" data-bs-theme="dark">
+
+        // ====================================
+        //             Section 12
+        // ====================================
+        //          Web Design School
+        // ====================================
+
+
+        25.) Introduction to Web Design
+
+            Web Design Principles
+            25.1.) Color Theory
+            25.2.) Typegraphy
+            25.3.) User Interface Design
+            25.4.) User Exeperience Design
+
+
+        26.) Understanding Colour Theory
+
+            - Art and science of creating the right palette for your website
+
+            MOODS
+            - RED       - love, energy, intensity
+            - YELLOW    - joy, intellect, attention     (attention grabbing)
+            - GREEN     - greshness, safety, growth     (food)
+            - BLUE      - stability, trust, serenity    (banks, finances through trust)
+            - PURPLE    - royalty, wealth, femininity   
+
+            COMBINING COLORS
+                Analogous Colors
+                - Adjacent colors in the color wheel
+                - navigation bars, logos and background
+
+                Complementary Colors
+                - Opposite colors in the color wheel
+                - attention grabbing
+                - "pops" the element
+                - Color Discord
+                    > complementary colors in texts
+
+                Triadic Color
+                - Triangle
+
+
+        27.) Understanding Typography and How to Choose a Font
+
+            Fonts Matter!
+
+            Typography
+            27.1) Serif typeface
+                - contains feet 
+                - the thicker the bold side, the newer the serif typeface (not older)
+                - examples
+                    > Old-style (Adobe Jenson)
+                    > Transitional (Baskerville)
+                    > Modern (Didot)
+                    > SLab-Serif (American Typewriter)
+
+            27.2.) San-Serif
+                - 90 degree (right angles)
+                - start ups 
+                - examples
+                    > Grotesque (News Gothic)
+                    > Neo-Grotesque (Helvetica)
+                    > Humanist (Gill Sans)
+                    > Geometric (Futura)
+
+                Serif
+                - Traditional, Table, Respectable
+                - Vogue, Didot - Modern Typeface
+
+                San Serif
+                - Sensible, Simple, Straightforward
+                
+                Script
+                - Personal, Creative, Elegant
+
+                Display
+                - Friendly, Loud, Amusing
+
+                Modern
+                - Stylish, Chic, Smart
+
+
+                Using a lot of font will make your content unorganized
+
+                - Find font that has the same mood and time ereae
+                - Contrast the Serif-ness and weights
+
+        
+        28.) Manage ATTENTION with effective UI Design
+
+
+            User Interface Design
+
+            28.1.) Hierarchy
+                Most important information is seen first
+                - Color (direct attention using the colors)
+                - Size (show what you can do with size)
+
+            28.2.) Layout
+                The design and layout affects the blandness
+                - Optimal block (line of text) should be achieved (40-60 characters per line)
+
+            28.3.) Alignment
+                How you position your elements on the screen
+                - Reduce alignment points (alignment anchor/gridlines)
+
+            28.4.) White Space
+                Empty space around elements
+                - use case in luxury shops, inject white space around a project
+                - bags in luxury shops placed in one panel vs bags (side by side) in store
+            
+            28.5.) Audience
+                Design towards your audience
+                Thematic towards your audience 
+                Think what would appeal to them
+
+
+        29.) UX Design
+
+            User Experience Design
+
+            - Psychology
+            > College Refurbishment Story
+
+            29.1.) Simplicity
+                - not to dense website
+                - clear design, good for the eyes
+
+            29.2.) Consistency
+                - keep design consistent
+                - keep functionality consistent
+
+            29.3.) Reading Patterns
+                - F Pattern
+                - Z Layout/Pattern
+            
+            29.4.) All Platform Design
+                - Responsiveness in website
+                - Should accomodate to screen
+
+            29.5.) Don't Use Your Powers for Evil
+                - Dark patterns 
+                - "False advertisement"
+
+
+
+        30.) Web Design in Practice 
+
+            Apply the Four Web Design Principle in designing a website
+            using Canva
+
+
+        // ====================================
+        //             Section 13
+        // ====================================
+        //        Capstone Project 2
+        // ====================================
+
+        
+
+-------------------------------------------------------------------------------------------      
+
+
+
+        // ====================================
+        //   Section 5 : Introduction to CSS
+        // ====================================
+
+            Inline CSS
+                - e.g. <html style="background: blue">
+                         ^              ^        ^
+                         |              |        |
+                      selector      property   value
+                         |          |____________|
+                         |           declaration |
+                         |______________________|
+                                attribute
+
+
+                        </html>
+
+            Internal CSS
+                - e.g. <style>
+                            html{
+                                background: red;
+                            }
+
+                        </style>
+
+            External CSS
+                <link
+                    rel ="stylesheet"  <---- relationship
+                    href="styles.css"  <---- location
+                />
+
+
+
+            Attribute Selector
+                        p[draggable]{color:red}
+                        ^      ^
+                        |      |
+                HTML Element  Attribute Selector
+
+
+        // ====================================
+        //   Section 6 : CSS Properties
+        // ====================================
+            
+            Font Size
+                - 1em (parent)
+
+                    <body> [20 px]  <----- parent
+                        <h1> Hello </h1> 1em = 20px
+                    </body>
+
+                    h1{font-size:1 em}
+
+                    // setting it to 2 em = 20x2 = 40px
+
+            FONT FAMILY
+
+                h1 {font-family: Helvetica, sans-serif}
+                                  typeface  generic font type
+
+*               e.g.
+                    <link rel="preconnect" href="https://fonts.googleapis.com">
+                    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+
+
+        // ====================================
+        //   Section 7 : Intermediate CSS
+        // ====================================
+        
+            CSS Specificity and Cascade
+            
+                Position
+                    li{
+                        color: red;
+                        color: blue     <--- applied
+                    }
+
+                Specificity
+                    <li id="first-id" class="first-class" draggable>
+
+                    li            {color:blue}
+                    .first-class  {color:red}
+                    li[draggable] {color:purple}
+                    #first-id     {color:orange}    <---- applied
+
+                Type
+                    <link rel-"stylesheet" href="style.css">
+                    <style> ... </style>
+                    <h1 style=" ... ">      </h1>   <---- applied
+
+                Importance
+                    color: red;
+                    color: green !important;    <--- applied
+        
+        
+            Combining CSS Selectors
+
+                .inner-box  p    {color:white}
+                  ^         |
+                  |         V
+          check class --> check "DESCENDENTS"
+
+
+          ILLUSTRATION
+
+x              -----------------------------------------
+x                              POSITION
+x          
+x              -----------------------------------------
+x                               margin
+x               xxxxxxxxxxxxxxx border xxxxxxxxxxxxxxxxx                              
+x                               padding
+x               ========================================
+x                               ELEMENT
+                      
+
+
+        // ====================================
+        //   Section 8 : Advanced CSS
+        // ====================================
+            
+
+            CSS Float
+
+
+            img{
+                float: left;
+            }
+x            _____________
+x           |             | ~~~~~~~~~~
+x           |            |  ~~~~~~~~~~
+x           |____________|  ~~~~~~~~~~
+x           ~~~~~~~~~~~~~~~~~~~~~~~~~~
+x           ~~~~~~~~~~~~~~~~~~~~~~~~~~
+x           ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+            Media Queries
+
+x                    ___breakpoint___
+x                   |               |
+x           @media (max-width: 600px)
+x           {
+x               hi{
+x                   font-size:15px;
+x               }
+x           }
+x
+
+
+        // ====================================
+        //   Section 9 : Flexbox
+        // ====================================
+
+
+            Flexbox Layout
+
+            .green {
+                order: 10;
+            }
+        
+        
+
+        // ====================================
+        //   Section 10 : Grid
+        // ====================================
+            
+            NON-RESPONSIVE
+                display: grid;
+                grid-templete-columns: 100px 200px;
+                grid-templete-rows: 400px 800px;
+
+        // ====================================
+        //   Section 11 : Bootstrap
+        // ====================================
+
+        
+        
+
+        // ====================================
+        //   Section 12 : Web Design School
+        // ====================================
+            
+            
+
+        // ====================================
+        //   Section 13 : Capstone Project 2
+        // ====================================
+
+
+
+
+
+
+
+
+
+
+*/
+
+
+
+
+
+
+
+/*
+
+
+
+
+        ************************************
+                       
+        ************************************
+
+
+-->
+
+<!--  
+       
+        // ====================================
+        //             Section 
+        // ====================================
+        //        
+        // ====================================
+
+       
+
+
+        // ====================================
+        //             Section 
+        // ====================================
+        //         
+        // ====================================
+
+        
+
+
+        // ====================================
+        //             Section 
+        // ====================================
+        //         
+        // ====================================
+
+        
+
+
+
+        // ====================================
+        //   Section  : 
+        // ====================================
+
+        
+
+        // ====================================
+        //   Section  : 
+        // ====================================
+            
+            
+
+        // ====================================
+        //   Section  :
+        // ====================================
+
+
+*/
