@@ -1,14 +1,20 @@
 body{
-   background-color: white;
+    background-color: white;
 }
 
+
+
 .big-title{
-    font-size: 10 rem;
-    color: yellow;
+    font-size: 10rem;
+    color: red;
     font-family: cursive;
 }
 
+.small-title{
+    font-size: 2rem;
+    color: black;
+}
 
-.margin-50 {
-    margin: 50px;
+.margin-50{
+    margin:50px;
 }
