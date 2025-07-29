@@ -5,7 +5,7 @@
 
 // });
 
-// CSS STLES
+// CSS STYLES
     // console.log($("h1"));
     // $("button").css("color", "red")
     // $("h1").addClass("big-title margin-50");
