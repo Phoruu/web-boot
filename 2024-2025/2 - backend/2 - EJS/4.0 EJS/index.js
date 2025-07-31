@@ -22,8 +22,7 @@ app.get("/", (req, res) => {
     res.render("index.ejs", 
         {
             dayType: type,
-            adv: advice,
-
+            adv: advice, 
         }
     )
 })
